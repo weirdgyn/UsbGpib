@@ -28,6 +28,7 @@ It is very important, that the Fuses of the AVR are programmed.
 
 Here an example how to program the bootloader using avrdude (using usbasp programmer):
 avrdude -c usbasp -p m32u4 -e -Ulock:w:0xFF:m -Uefuse:w:0xcb:m -Uhfuse:w:0xd8:m -Ulfuse:w:0xde:m
+
 avrdude -c usbasp -p m32u4 -U flash:w:BootLoader.hex
 
 To program bootloader and application image at the same time using AvrDude, you can use this command:
@@ -61,7 +62,7 @@ As a next step insert the PCB into the big part of the housing again. It has a r
 
 Then put the smaller part of the housing on top of it, insert the screws (they can be pushed hard to destroy the "membrane" first time) and nuts and screw it together.
 
-Voil‡... your adapter is finished and ready to use :-)
+Voil√†... your adapter is finished and ready to use :-)
 
 <img src="https://raw.githubusercontent.com/xyphro/UsbGpib/master/pictures/Upcoming_Rev2.png" width="80%"/>
 
