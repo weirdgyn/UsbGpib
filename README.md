@@ -17,13 +17,11 @@
 
 For detailed visibility look under the Latest update link above!
 
+[09th June 2026] **Devin (W6DVN) has successfully ported the popular KE5FX GPIB Toolkit to work seamlessly with UsbGpib V2. You can find the updated version here: https://github.com/fehknt/GPIB**
+
 [18th Apr 2026]: **Released Firmware V2.4: Added support for multiple GPIB devices**
 
 [18th Apr 2026]: **Added some updated notes on GPIBee**
-
-[07th Mar 2026]: **USbGpib V2 back in Stock on Elecrow**  
-
-[07th Mar 2026]: **10 UsbGpib V3 == GPIBee prototypes ready for testing**
 
 
 # Next version update USBGpib V3 
@@ -308,6 +306,23 @@ Below list is equipment I mainly myself tested. Many other users have other meas
 - Tektronix TDS7104 Digital Phosphor Oscilloscope
 - HP 8596A spectrum analyzer
 - Agilent E3648A dual power supply
+
+A rather incomplete summary of equipment reported to work from users is:
+- Keithley S46T
+- HP/Agilent/Keysight 34401A of different generations
+- Agilent N6700B
+- Agilent E4416A
+- Keithley 2230G-30-1
+- Tektronix AFG3102
+- Rohde & Schwarz SMB 100A
+- Agilent E3631A
+- Keithley 2601A
+- ICS 4899GPIB
+- TTI QL564TP
+- Keysight E3645A
+- Lecroy LW110
+- and many more... It will take quite a while till I have parsed all my emails for working instruments :-)
+
 
 ## Scenarious
 

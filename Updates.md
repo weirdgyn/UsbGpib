@@ -3,6 +3,12 @@ This new file will in future contain all updates. The latest updates are always 
 
 # Recent Updates
 
+## 09th June 2026
+
+Devin (W6DVN) has successfully ported the popular KE5FX GPIB Toolkit to work seamlessly with UsbGpib V2. You can find the updated version here: https://github.com/fehknt/GPIB
+
+KE5FX GPIB toolkit is a popular set of specialized GPIB applications created by John Miles to make research-grade measurements using oscilloscopes, spectrum analyzers, counters and other IEEE-488 instruments.
+
 ## 18th April 2026
 
 USBGpib has now support to address multiple GPIB devices with the newly added firmware version V2.4.
