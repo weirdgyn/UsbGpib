@@ -18,7 +18,7 @@
 
 # XyphroLabs UsbGpib V2 User Manual
 
-Last Update: 1st February 2026  
+Last Update: 9th June 2026  
 This document is part of [Xyphro
 UsbGpib](https://github.com/xyphro/UsbGpib) project
 
@@ -300,8 +300,17 @@ cycle the adapter and use the new firmware.
 
 <div class="tcolorbox">
 
-Note: Drag and drop operation e.g. from Windows explorer does will work.
+Note: Drag and drop operation e.g. from Windows explorer does not work.
 Ensure you use the command line method as described.
+
+</div>
+
+<div class="tcolorbox">
+
+Note: In case the device behaves as if it is bricked (which can happen
+if you use cp under linux to reflash it), you can enter the bootloader
+mode by unplugging the USB cable, keeping the button pressed and
+connecting it again while holding the button.
 
 </div>
 
