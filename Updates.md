@@ -7,6 +7,9 @@ This new file will in future contain all updates. The latest updates are always 
 
 UsbGPIB V3 = GPIBee is available - see: https://www.gpibee.com/
 
+Have also a look at this nice project:  
+**[XyphroLabs-USBGpib-DMM4050](https://github.com/ZandanKhan/XyphroLabs-USBGpib-DMM4050)** — a Python GUI by [Zandan Khan](https://github.com/ZandanKhan) for controlling the Tektronix DMM 4050 (6½-digit precision multimeter) over UsbGpib, with measurement logging to CSV. Great example of building a full front-end on top of this adapter.
+
 ## 09th June 2026
 
 Devin (W6DVN) has successfully ported the popular KE5FX GPIB Toolkit to work seamlessly with UsbGpib V2. You can find the updated version here: https://github.com/fehknt/GPIB
