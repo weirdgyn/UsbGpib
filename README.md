@@ -17,77 +17,45 @@
 
 For detailed visibility look under the Latest update link above!
 
-[09th June 2026] **Devin (W6DVN) has successfully ported the popular KE5FX GPIB Toolkit to work seamlessly with UsbGpib V2. You can find the updated version here: https://github.com/fehknt/GPIB**
+[17h Aug 2026] Nice project: **[XyphroLabs-USBGpib-DMM4050](https://github.com/ZandanKhan/XyphroLabs-USBGpib-DMM4050)** — a Python GUI by [Zandan Khan](https://github.com/ZandanKhan) for controlling the Tektronix DMM 4050 (6½-digit precision multimeter) over UsbGpib, with measurement logging to CSV. Great example of building a full front-end on top of this adapter.
 
-[18th Apr 2026]: **Released Firmware V2.4: Added support for multiple GPIB devices**
-
-[18th Apr 2026]: **Added some updated notes on GPIBee**
+[17th Aug 2026]: **GPIBee is available, but...**
 
 
-# Next version update USBGpib V3 
 
-**UsbGpib V3 has a Name - Introducing GPIBee**
+# GPIBee = UsbGpib V3 is available!
 
-...and as you’ll see in the picture: The beauties are ready!
+The title says it: GPIBee - UsbGpib V3 - is now available. Finally!  
+  
+It's for everyone who's told me, in issues and DMs, "I love this, but I don't have time to build one": USB-C and Ethernet with PoE, VXI-11 with multiple simultaneous sessions, and 3.5-5x the speed of V2 - in a proper enclosure, with real support behind it. 
+It's built, tested, and shipping now.
 
-<img src="pictures/10GPIBees.jpg" style="width=60%" alt="image" />
+I put together a short video showing it in action: [Introducing GPIBee](https://lnkd.in/epR7Xf-b).  
+And you can find the full details at [GPIBee.com](https://www.gpibee.com).
 
-After months of development, redesigns, loosing hair on fixing SW bugs and teasing the new Ethernet + PoE capabilities, the next generation of UsbGpib finally has its official identity. From this point forward, UsbGpib V3 will be known as GPIBee - a compact, fast, and delightfully capable little worker that's ready to buzz around your lab equipment.
+This didn't come out of nowhere - there's a bit of a story behind it, including one thing I haven't said outright until now, something I went back and forth on for quite a while before deciding.
 
-PoE is fully operational, VXI-11 supports multiple simultaneous connections, and USB High-Speed is performing flawlessly - on MY bench. Which does not mean (yet) on everybody elses bench. Testing is by multiple people is always very important!
+~7 years ago I started UsbGpib as a weekend project: An open, MIT-licensed way to talk to GPIB instruments without paying for an $800+ commercial adapter. I never expected it to pick up 642 stars, 82 forks, and end up soldered into home labs, universities, and repair benches around the world. That still means a lot to me, and it's the reason I kept and keep maintaining it for as long as I have.
 
-I now have ten GPIBee prototypes fully assembled and sitting proudly on my desk. These units will soon head out to the first wave of beta testers who’ve been following the journey and are eager to put them through real‑world use.
-I had hoped to start shipping next week, but with Embedded World taking up my entire schedule, distribution will begin shortly after I'm back. The excitement doesn't slow down - it just builds a little more.
+A fair bit of that maintenance happened on evenings and weekends that would otherwise have gone to family time or just switching off. Nothing dramatic - just the normal trade-off of a side project that grew bigger than expected. Honestly, the part I'll remember most isn't the hours, it's the people: The issues, the emails, the odd late-night message or calls from someone debugging their own build. I've genuinely enjoyed those conversations, and they're a big part of why I kept going.
 
-Thank you all for the incredible support, feedback, and enthusiasm.
+Along the way I also learned some harder lessons. To be clear, I've always been and are genuinely happy to see people or companies build their own UsbGpib - that's exactly what open source is for. What sat less well with me was seeing unrelated manufacturers turn V2 into a business of their own, selling it at scale with no attribution back to the project. That's a different thing entirely from working with official partners like Elecrow and Binho, who I have a real relationship with and who've supported this project properly.
 
-GPIBee is about to take its first flight, and you're part of the swarm that made it possible.
-Stay tuned - beta testing starts soon, and the prototypes look fantastic.
+But it stayed with me while I was figuring out what V3 should be, and it wasn't an easy decision to make.
 
-## GPIBee update 18th April: 
+So here's the thing I haven't said outright until now: V3 - GPIBee - is a commercial product rather than an open one. Something which might change in future, but for now it is.
 
-The first prototypes have been shipped, and internal testing is already well advanced.  
-Across all protocols, read performance shows a **3.5× to 5× speed increase**, and this is **without** any dedicated speed-optimization work applied yet.
+That's a real change from V1/V2, and I don't want to gloss over it.
 
-## Communication Modes
+Here's the honest reasoning:
 
-### USB Interface
+- Going commercial means there's a sustainable way to keep this going, rather than relying on whatever spare evenings I happen to have.
+- It lets me fund the things a hobby project can't - CNC-machined, EMI-shielded enclosures, firmware QA, and proper support.
+- It gives the project a legitimate path forward that undercutting clones can't quietly erase.
 
-GPIBee supports three independent USB-based communication modes:
+None of that changes what's already yours. V1 and V2 stay exactly as they are - MIT-licensed, fully open, schematics and firmware included, free to build and modify. And to be clear: I'm not walking away from it. I'll keep maintaining UsbGpib - answering issues, keeping it working - alongside GPIBee, not instead of it.
 
-1. **Network mode**  
-   GPIBee exposes a USB-based Ethernet interface. An IP address is assigned automatically, enabling true plug-and-play operation.  
-   - Full **VXI-11** support  
-   - Integrated **web server** providing configuration pages, a GPIB command console, and the complete manual matching the currently installed firmware  
-   - Ideal for multi-device setups and remote control - it should be considered as the first Goto solution in terms of USB based modes.
-
-2. **USBTMC mode**  
-   Similar to **UsbGpib V2**, but extended with additional commands, including the ability to set the target **GPIB device address** — enabling communication with multiple GPIB instruments.
-
-3. **++ protocol mode**  
-   Exposes a **USB CDC UART** implementing the popular ++ protocol, compatible with existing controllers using that protocol — but at significantly higher speed.
-
-The USB modes are **mutually exclusive**. The active mode can be selected via the **web interface** or through internal **SCPI commands**.
-
-### Ethernet Interface
-
-1. **VXI-11**  
-   Provides multiple logical channels, allowing communication with several GPIB devices simultaneously without manually switching addresses between commands. 
-   - Proper **lock handling** for multi-client access  
-   - Full **SRQ** support  
-   - Full **GPIB subaddressing** support
-
-2. **++ protocol**  
-   Optional **TCP/IP** service on port **1234**, offering the same `++` protocol implementation as in USB CDC UART mode.
-
-Both Ethernet protocols can be **active at the same time**. The Ethernet interface also exposes the same **web interface** as USB network mode, enabling GPIB transfers, configuration changes, and access to the **firmware-synchronized manual**.
-
-## GPIBee Beta Testing Status
-
-The current beta focus remains on **functional correctness and stability**.  
-**Speed optimization** will follow next.
-
-For testers not having received an adapter yet: Additional prototype units will be shipped soon. Handling too many testers at once would otherwise become too **time-intensive**.
+I'm proud of where this landed, and I'm looking forward to keeping both projects going - UsbGpib and GPIBee side by side. Thanks for seven years of bug reports and good conversations so far, with plenty more to come I hope. I hope some of you will give GPIBee a look, and either way, I'd genuinely love to hear what you think.
 
 ---
 
@@ -310,17 +278,25 @@ Below list is equipment I mainly myself tested. Many other users have other meas
 A rather incomplete summary of equipment reported to work from users is:
 - Keithley S46T
 - HP/Agilent/Keysight 34401A of different generations
+- HP/Aglient/Keysight 34410A
 - Agilent N6700B
 - Agilent E4416A
+- Agilent 34970
+- Keysight E3645A
 - Keithley 2230G-30-1
+- Keithley 2601A
 - Tektronix AFG3102
+- Tektronix 3014C
 - Rohde & Schwarz SMB 100A
 - Agilent E3631A
-- Keithley 2601A
 - ICS 4899GPIB
 - TTI QL564TP
-- Keysight E3645A
 - Lecroy LW110
+- LeCroy 334A
+- LeCroy 354A
+- Hameg 3524
+- Fluke 5522A
+- Fluke 5500A 
 - and many more... It will take quite a while till I have parsed all my emails for working instruments :-)
 
 

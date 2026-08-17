@@ -3,6 +3,10 @@ This new file will in future contain all updates. The latest updates are always 
 
 # Recent Updates
 
+## 17th Aug 2026
+
+UsbGPIB V3 = GPIBee is available - see: https://www.gpibee.com/
+
 ## 09th June 2026
 
 Devin (W6DVN) has successfully ported the popular KE5FX GPIB Toolkit to work seamlessly with UsbGpib V2. You can find the updated version here: https://github.com/fehknt/GPIB
